@@ -2,7 +2,7 @@
 This is a basic weather app in react demonstrating API calls
 
 
-This is a WebApp for retreiving the weather using the OpenWeatherMap API call
+This is a WebApp for retreiving the weather using/manipulating the OpenWeatherMap API call and working with async functions and promises
 
 languages used:
 
