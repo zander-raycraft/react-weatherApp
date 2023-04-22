@@ -79,7 +79,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Personal Weather App</h1>
+      <h1 id="handle">Personal Weather App</h1>
       <form onSubmit={handleSearch}>
         <input
           type="text"
@@ -87,7 +87,7 @@ function App() {
           value={ userCity }
           onChange={ (e) => setUserCity(e.target.value)}  
         />
-        <button type='submit' disabled={ !userCity && !weatherAPI}>
+        <button type='submit' class = "weather-button" disabled={ !userCity && !weatherAPI}>
           Get Weather
         </button>
         {!userCity && !loadingScr && !errorMsg && (
@@ -99,7 +99,7 @@ function App() {
       { loadingScr && <p>Loading info...</p> }
       { errorMsg && <p>{ errorMsg }</p>}
       {weatherAPI && (
-        <div>
+        <div class="weather-info">
 
           <h2>{ weatherAPI.name }</h2>
           <p>Temperature: { weatherAPI.main.temp } C</p>

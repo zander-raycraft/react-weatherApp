@@ -1,38 +1,76 @@
 .App {
+  position: absolute;
   text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: lightblue;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#handle {
+  position: relative;
+  left: 45%;
+  color: yellow;
+  width: 3.0vw;
+  background-color: darkblue;
+  border: 5px solid black;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.weather-info {
+  font-family: 'Courier New', Courier, monospace;
   color: white;
+  font-size: 1.50vw;
+  position: relative;
+  left: 38%;
+  top: 5%;
+  width: 23.0vw;
+  height: 20.0vw;
+  border: 5px solid black;
+  box-shadow: 5px 5px lightsalmon;
+  background-color: darkblue;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.weather-button {
+  color: darkblue;
+  position: relative;
+  font-weight: bold;
+  background-color: salmon;
+  left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.weather-button:hover {
+  box-shadow: 2px 2px darkblue;
+  animation: shake 0.5s;
+  -webkit-animation: shake 0.5s;
+}
+
+/*Making the animation*/
+@keyframes shake {
+  0% {
+    transform: translateX(0);
   }
-  to {
-    transform: rotate(360deg);
-  }
+  25% {
+    -webkit-transform: translateX(-5px);
+    -moz-transform: translateX(-5px);
+    -ms-transform: translateX(-5px);
+    -o-transform: translateX(-5px);
+    transform: translateX(-5px);
+}
+  100% {
+    -webkit-transform: translateX(5px);
+    -moz-transform: translateX(5px);
+    -ms-transform: translateX(5px);
+    -o-transform: translateX(5px);
+    transform: translateX(5px);
+}
 }
