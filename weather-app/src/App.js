@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import axios from 'axios';
 import React, { useState, useEffect} from 'react';
@@ -35,7 +35,6 @@ function App() {
     const getWeatherWithLocation = async () => {
       setLoadingScr(true);
       try {
-        const position = await getCurrentPosition();
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${userCity}&appid=3f3f851a1da6945f92571858be32c63c&units=metric`;
         //calling axios as a runner for the data
         const response = await axios.get(url);
@@ -51,7 +50,7 @@ function App() {
     if (!userCity) {
       getWeatherWithLocation();
     }
-  }, [!userCity]);
+  });
 
   //makig the handling function
   const handleSearch = async (e) => {
@@ -76,6 +75,16 @@ function App() {
       navigator.geolocation.getCurrentPosition(resolve, reject);
     });
   };
+
+  useEffect(() => {
+    getCurrentPosition()
+      .then((position) => {
+      
+      })
+      .catch((error) => {
+        console.log('Error getting user location:', error);
+      });
+  }, []);
 
   return (
     <div className="App">
